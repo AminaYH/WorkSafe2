@@ -1,0 +1,101 @@
+<div class="surface-0 flex justify-content-center" xmlns="http://www.w3.org/1999/html">
+    <div id="home" class="landing-wrapper overflow-hidden">
+        <div class="py-4 px-4 mx-0 md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
+            <a class="flex align-items-center" href="#">
+                <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-white' : 'logo-dark'}}.png" alt="WorkSafe Logo" height="70" class="mr-0 lg:mr-2"><span class="text-900 font-medium text-2xl line-height-3 mr-8"></span>
+            </a>
+            <a pRipple class="cursor-pointer block lg:hidden text-700" pStyleClass="@next" enterClass="hidden" leaveToClass="hidden" [hideOnOutsideClick]="true">
+                <i class="pi pi-bars text-4xl"></i>
+            </a>
+            <div class="align-items-center surface-0 flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
+                <ul class="list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
+                    <li>
+                        <a (click)="router.navigate(['/home'], {fragment: 'home'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="router.navigate(['/home'], {fragment: 'features'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                            <span>Features</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="router.navigate(['/home'], {fragment: 'highlights'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                            <span>Highlights</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="router.navigate(['/home'], {fragment: 'pricing'})" pRipple class="flex m-0 md:ml-5 px-0 py-3 text-900 font-medium line-height-3">
+                            <span>Pricing</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
+                    <button pButton pRipple label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-blue-500"></button>
+                    <button pButton pRipple label="Register" class="p-button-rounded border-none ml-5 font-light line-height-2 bg-blue-500 text-white"></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="hero" class="flex flex-column pt-4 px-4 lg:px-8 overflow-hidden">
+            <div class=" absolute top-0 right-0 flex align-items-center justify-content-center">
+            <img  src="assets/layout/images/home.svg"  width="500" height="500" class="  mx-3 my-3 md:my-0 bg-no-repeat">
+            </div>
+            <div class="mx-4 md:mx-8 mt-0 md:mt-4">
+                <h1 class="text-6xl font-bold text-gray-900 line-height-2"><span class="font-light block">Eu sem integer</span>eget magna fermentum</h1>
+                <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700"> </p>
+                <button pButton pRipple type="button" label="Get Started" class="p-button-rounded text-xl border-none mt-3 bg-blue-500 font-normal line-height-3 px-3 text-white"></button>
+            </div>
+            <div class="flex justify-content-center md:justify-content-end">
+
+            </div>
+        </div>
+        <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
+            <div class="grid justify-content-between">
+                <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
+                    <a (click)="router.navigate(['/pages/home'], {fragment: 'home'})" class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
+                        <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-white' : 'logo-dark'}}.png" alt="footer sections" width="70" height="70" class="mr-2">
+                        <h4 class="font-medium text-3xl text-900"></h4>
+                    </a>
+                </div>
+
+                <div class="col-12 md:col-10 lg:col-7">
+                    <div class="grid text-center md:text-left">
+                        <div class="col-12 md:col-3">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Company</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">About Us</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">News</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Investor Relations</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Careers</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Media Kit</a>
+                        </div>
+
+                        <div class="col-12 md:col-3 mt-4 md:mt-0">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Resources</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Get Started</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Learn</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Case Studies</a>
+                        </div>
+
+                        <div class="col-12 md:col-3 mt-4 md:mt-0">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Community</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Discord</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Events<img src="assets/demo/images/landing/new-badge.svg" class="ml-2"/></a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">FAQ</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Blog</a>
+                        </div>
+
+                        <div class="col-12 md:col-3 mt-4 md:mt-0">
+                            <h4 class="font-medium text-2xl line-height-3 mb-3 text-900">Legal</h4>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Brand Policy</a>
+                            <a class="line-height-3 text-xl block cursor-pointer mb-2 text-700">Privacy Policy</a>
+                            <a class="line-height-3 text-xl block cursor-pointer text-700">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

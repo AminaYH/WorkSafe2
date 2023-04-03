@@ -1,0 +1,38 @@
+.layout-sidebar {
+    width: 280px;
+    height: 92%;
+    position: fixed;
+    left: 0cm;
+    top: 1.5cm;
+    z-index: 999;
+    overflow-x: hidden;
+    overflow-y: auto;
+    animation: flow 10s linear infinite;
+    font-size: 16px;
+    border-radius:25px;
+
+}
+
+.layout-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.layout-menu li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+
+}
+
+.layout-menu li:last-child {
+    border-bottom: none;
+
+}
+
+.layout-menu li.menu-separator {
+    height: 1px;
+    margin: 100px 0;
+    background-color: #ddd;
+}
+

@@ -1,0 +1,33 @@
+.sidebar {
+    width: 200px; /* Ajustez la largeur de votre barre latérale */
+}
+
+ul.layout-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.layout-menu li {
+    display: flex; /* Ajout de la propriété flex */
+    flex-direction: column; /* Ajout de la direction de colonne pour afficher le label en dessous de l'icône */
+    font-size: 16px; /* Modifier la taille de texte ici */
+    padding: 10px;
+    word-wrap: break-word; /* Ajout de cette propriété pour retourner le texte à la ligne */
+}
+
+.layout-menu li a {
+    display: flex; /* Ajout de la propriété flex pour centrer l'icône verticalement */
+    align-items: center; /* Centrage vertical */
+    text-decoration: none;
+}
+
+.layout-menu li .layout-menu-icon {
+    margin-bottom: 5px; /* Espace entre l'icône et le label */
+}
+
+.menu-separator {
+    border-bottom: 1px solid #ccc;
+    margin: 5px 0;
+    padding: 0;
+}

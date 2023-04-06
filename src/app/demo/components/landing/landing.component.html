@@ -35,7 +35,7 @@
                     </li>
                 </ul>
                 <div class="flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <button pButton pRipple label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-white-alpha-70"></button>
+                    <button (click)="router.navigate(['auth/login'])" pButton pRipple label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-white-alpha-70"></button>
                     <button pButton pRipple label="Register" class="p-button-rounded border-none ml-5 bg-white-alpha-10 font-light line-height-2  text-white"></button>
                 </div>
             </div>
@@ -261,9 +261,9 @@
         <div class="py-4 px-4 mx-0 mt-8 lg:mx-8">
             <div class="grid justify-content-between">
                 <div class="col-12 md:col-2" style="margin-top:-1.5rem;">
-                    <a (click)="router.navigate(['/pages/landing'], {fragment: 'hjfhkjfe'})" class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
-                        <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.svg" alt="footer sections" width="50" height="50" class="mr-2">
-                        <h4 class="font-medium text-3xl text-900">tom</h4>
+                    <a (click)="router.navigate(['/pages/landing'], {fragment: 'home'})" class="flex flex-wrap align-items-center justify-content-center md:justify-content-start md:mb-0 mb-3 cursor-pointer">
+                        <img src="assets/layout/images/{{layoutService.config.colorScheme === 'light' ? 'logo-dark' : 'logo-white'}}.png" alt="footer sections" width="50" height="50" class="mr-2">
+                        <h4 class="font-medium text-3xl text-900">WorkSafe</h4>
                     </a>
                 </div>
 

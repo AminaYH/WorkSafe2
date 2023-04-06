@@ -1,7 +1,7 @@
 <div class=" grid surface-50 flex justify-content-center z-5 " xmlns:p="http://www.w3.org/1999/xhtml">
 
     <div id="home" class=" landing-wrapper overflow-hidden ">
-        <div  class="    pt-4 px-4 lg:px-8 overflow-hidden z-0 "s
+        <div  class="    pt-4 px-4 lg:px-8 overflow-hidden z-0 "
               style="background:linear-gradient(60deg, rgba(169,69,252,1) 44%, rgb(48,26,140) 46%, rgba(18,24,116,1) 47%, rgba(1,7,35,1) 48%); clip-path: inset(0% 15% 4% 45% round 07px);transform: rotate(-18deg) scale(28) translateX(02.6%) translateY(12%);">
         </div>
         <div  class="py-4 z-5 ql-background sticky  md:mx-6 lg:mx-8 lg:px-8 flex align-items-center justify-content-between relative lg:static mb-3">
@@ -35,7 +35,7 @@
                     </li>
                 </ul>
                 <div class=" z-5 flex justify-content-between lg:block border-top-1 lg:border-top-none surface-border py-3 lg:py-0 mt-3 lg:mt-0">
-                    <button pButton pRipple label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-white-alpha-80 "></button>
+                    <button (click)="router.navigate(['auth/login'])" pButton pRipple label="Login" class="p-button-text p-button-rounded border-none font-light line-height-2 text-white-alpha-80 "></button>
                     <button pButton pRipple label="Register" class="p-button-outlined p-button-rounded bg-white-alpha-10  text-white-alpha-80  ml-5 font-light line-height-2  "></button>
                 </div>
 
@@ -48,7 +48,7 @@
             <div class="col-4 z-5 mx-4 md:mx-8 mt-0 md:mt-4" style="transform : translateX(30%) ;">
                 <h1 class="text-3xl  text-white-alpha-80 line-height-2">Votre partenaire pour la sécurité au travail, start with WorkSafe</h1>
                 <p class="font-normal text-2xl line-height-3 md:mt-3 text-gray-700"> </p>
-                <p-button label="Get Started" styleClass="p-button-outlined p-button-rounded  text-white-alpha-80 mt-3 ml-1 px-3 "></p-button>
+                <p-button (click)="router.navigate(['auth/login']) " label="Get Started" styleClass="p-button-outlined p-button-rounded  text-white-alpha-80 mt-3 ml-1 px-3 "></p-button>
             </div>
 
             <div class="col-6 z-5  pxl-8" style="transform : translateX(10%) translateY(-10%);">

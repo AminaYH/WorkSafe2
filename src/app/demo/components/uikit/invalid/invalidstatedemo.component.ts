@@ -34,11 +34,11 @@ export class InvalidStateDemoComponent implements OnInit {
 
     constructor(private countryService: CountryService) {
         this.cities = [
-            { name: 'New York', code: 'NY' },
-            { name: 'Rome', code: 'RM' },
-            { name: 'London', code: 'LDN' },
-            { name: 'Istanbul', code: 'IST' },
-            { name: 'Paris', code: 'PRS' }
+            { type: 'New York', code: 'NY' },
+            { type: 'Rome', code: 'RM' },
+            { type: 'London', code: 'LDN' },
+            { type: 'Istanbul', code: 'IST' },
+            { type: 'Paris', code: 'PRS' }
         ];
     }
 
@@ -62,5 +62,5 @@ export class InvalidStateDemoComponent implements OnInit {
 
         this.filteredCountries = filtered;
     }
-    
+
 }

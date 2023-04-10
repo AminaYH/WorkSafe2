@@ -1,33 +1,28 @@
-.sidebar {
-    width: 200px; /* Ajustez la largeur de votre barre latérale */
+.menu-item  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-color: rgba(14, 26, 100, 0);
+    margin-top: 5px;
+    font-size: 13px;
 }
 
-ul.layout-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+::ng-deep .ui-menu,.ui-menu .ui-menu-child{
+    border: 0px;
+    background:#5393bc 0 0 repeat-x !important;
+}
+::ng-deep .ui-menu .ui-menuitem .ui-menuitem-link:hover{
+    background-color: #5393bc;
+}
+::ng-deep .ui-menu .ui-menuitem .ui-state-active{
+    background-color: #5393bc;
+}
+::ng-deep .ui-menu .ui-menuitem.ui-menuitem-active>.ui-menuitem-link,
+.ui-menu .ui-menuitem .ui-menuitem-link:hover{
+    background-color:#186ba0;
+}
+::ng-deep .my-menu-item{
+    background: #5393bc !important;
 }
 
-.layout-menu li {
-    display: flex; /* Ajout de la propriété flex */
-    flex-direction: column; /* Ajout de la direction de colonne pour afficher le label en dessous de l'icône */
-    font-size: 16px; /* Modifier la taille de texte ici */
-    padding: 10px;
-    word-wrap: break-word; /* Ajout de cette propriété pour retourner le texte à la ligne */
-}
 
-.layout-menu li a {
-    display: flex; /* Ajout de la propriété flex pour centrer l'icône verticalement */
-    align-items: center; /* Centrage vertical */
-    text-decoration: none;
-}
-
-.layout-menu li .layout-menu-icon {
-    margin-bottom: 5px; /* Espace entre l'icône et le label */
-}
-
-.menu-separator {
-    border-bottom: 1px solid #ccc;
-    margin: 5px 0;
-    padding: 0;
-}

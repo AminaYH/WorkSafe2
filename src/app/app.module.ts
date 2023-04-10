@@ -14,14 +14,13 @@ import { NodeService } from './demo/service/node.service';
 import { PhotoService } from './demo/service/photo.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { TeamsComponent } from './demo/components/workspace/teams/teams.component';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
     return new TranslateHttpLoader(httpClient);
   }
 @NgModule({
     declarations: [
-        AppComponent, NotfoundComponent, TeamsComponent
+        AppComponent, NotfoundComponent
     ],
     imports: [
         AppRoutingModule,

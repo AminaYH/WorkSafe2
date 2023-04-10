@@ -1,5 +1,5 @@
 .layout-sidebar {
-    width: 280px;
+    width: 100px;
     height: 92%;
     position: fixed;
     left: 0cm;
@@ -8,20 +8,20 @@
     overflow-x: hidden;
     overflow-y: auto;
     animation: flow 10s linear infinite;
-    font-size: 16px;
-    border-radius:25px;
+    font-size: 14px;
+    background-color: rgba(148, 148, 148, 0.13);
 
 }
 
 .layout-menu {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 5cm;
 }
 
 .layout-menu li {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 0px;
+    border-bottom: 0px solid #ddd;
 
 }
 
@@ -32,7 +32,8 @@
 
 .layout-menu li.menu-separator {
     height: 1px;
-    margin: 100px 0;
+    margin: 1px 0;
     background-color: #ddd;
 }
+
 

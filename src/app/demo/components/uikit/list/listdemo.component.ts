@@ -29,24 +29,24 @@ export class ListDemoComponent implements OnInit {
         this.productService.getProducts().then(data => this.products = data);
 
         this.sourceCities = [
-            { name: 'San Francisco', code: 'SF' },
-            { name: 'London', code: 'LDN' },
-            { name: 'Paris', code: 'PRS' },
-            { name: 'Istanbul', code: 'IST' },
-            { name: 'Berlin', code: 'BRL' },
-            { name: 'Barcelona', code: 'BRC' },
-            { name: 'Rome', code: 'RM' }];
+            { type: 'San Francisco', code: 'SF' },
+            { type: 'London', code: 'LDN' },
+            { type: 'Paris', code: 'PRS' },
+            { type: 'Istanbul', code: 'IST' },
+            { type: 'Berlin', code: 'BRL' },
+            { type: 'Barcelona', code: 'BRC' },
+            { type: 'Rome', code: 'RM' }];
 
         this.targetCities = [];
 
         this.orderCities = [
-            { name: 'San Francisco', code: 'SF' },
-            { name: 'London', code: 'LDN' },
-            { name: 'Paris', code: 'PRS' },
-            { name: 'Istanbul', code: 'IST' },
-            { name: 'Berlin', code: 'BRL' },
-            { name: 'Barcelona', code: 'BRC' },
-            { name: 'Rome', code: 'RM' }];
+            { type: 'San Francisco', code: 'SF' },
+            { type: 'London', code: 'LDN' },
+            { type: 'Paris', code: 'PRS' },
+            { type: 'Istanbul', code: 'IST' },
+            { type: 'Berlin', code: 'BRL' },
+            { type: 'Barcelona', code: 'BRC' },
+            { type: 'Rome', code: 'RM' }];
 
         this.sortOptions = [
             { label: 'Price High to Low', value: '!price' },
@@ -69,5 +69,5 @@ export class ListDemoComponent implements OnInit {
     onFilter(dv: DataView, event: Event) {
         dv.filter((event.target as HTMLInputElement).value);
     }
-    
+
 }

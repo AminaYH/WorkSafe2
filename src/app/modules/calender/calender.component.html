@@ -1,0 +1,68 @@
+<div>
+    <div >
+<p-button (click)="showDialog()"  label="leave request "></p-button>
+<p-dialog header="Request" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+<ng-template pTemplate="content" >
+
+    <form (submit)="submitForm()">
+
+<div class="card bg-indigo-50">
+    <h5>leave </h5>
+    <div class="p-fluid p-formgrid grid">
+        <div class="field col-12 md:col-6">
+            <label htmlFor="firstname2">Firstname</label>
+            <input pInputText id="firstname2" type="text" />
+        </div>
+        <div class="field col-12 md:col-6">
+            <label htmlFor="lastname2">Lastname</label>
+            <input pInputText id="lastname2" type="text" />
+        </div>
+        <div class="field col-12 md:col-6">
+            <label htmlFor="id">Employee ID</label>
+            <input pInputText id="secret" />
+        </div>
+        <div class="field col-12 md:col-6">
+            <label htmlFor="Department">Department</label>
+            <input pInputText id="Department" />
+        </div>
+        <div class="field col-12 md:col-6 z-5" style="transform: translateY(8%)">
+            <form [formGroup]="formGroup">
+                <label htmlFor="leaveType">leave type </label>
+                <p-dropdown formControlName="leave type" [options]="leaveType" optionLabel="type"></p-dropdown>
+            </form>
+        </div>
+        <div class="field col-12 md:col-6">
+            <label htmlFor="StartDate" >Start Date</label>
+            <input class="ng-invalid " pInputText id="StartDate" mask="99/99/9999" placeholder="01/01/2023" slotChar="mm/dd/yyyy" />
+        </div>
+        <div class="field col-12 md:col-6">
+            <label htmlFor="EndDate">End Date</label>
+            <input pInputText id="EndDate" mask="99/99/9999" placeholder="01/01/2023" slotChar="mm/dd/yyyy" />
+        </div>
+        <div class=" col-12 md:col-12 z-0">
+
+         <span class="p-float-label">
+      <textarea id="float-input" rows="6" cols="50" pInputTextarea></textarea>
+            <label for="float-input">Reason for Leave </label>
+        </span>
+        </div>
+        <div class="field lg:col-offset-5 md:col-3 " >
+        <button pButton label="send" (click)="addMessages()"></button>
+
+        </div>
+    </div>
+</div>
+    </form>
+
+</ng-template>
+</p-dialog>
+  </div>
+    <div class="field col-3  ">
+    <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
+    </div>
+
+    <div>
+
+
+    </div>
+</div>

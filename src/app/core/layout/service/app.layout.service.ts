@@ -34,9 +34,9 @@ export class LayoutService {
     };
 
     state: LayoutState = {
-        staticMenuDesktopInactive: false,
+        staticMenuDesktopInactive: true ,
         overlayMenuActive: false,
-        profileSidebarVisible: false,
+        profileSidebarVisible: true,
         configSidebarVisible: false,
         staticMenuMobileActive: false,
         menuHoverActive: false

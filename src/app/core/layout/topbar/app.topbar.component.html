@@ -1,14 +1,29 @@
 <div class="layout-topbar">
 
     <button #menubutton class="p-link layout-menu-button layout-topbar-button justify-content-start ml-0 " (click)="layoutService.onMenuToggle()"  >
-        <img src="src/assets/demo/images/access/icons.svg">    </button>
+        <img src="src/assets/demo/images/access/icons.svg">   </button>
     <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="layoutService.showProfileSidebar()">
         <i class="pi pi-ellipsis-v"></i>
     </button>
-    <a class="layout-topbar-logo" routerLink="">
+    <a class="layout-topbar-logo" routerLink=" ">
         <span class="text-500 text-m">WorkSafe</span>
     </a>
 
+    <div  class=" z-5 align-items-center  flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
+        <ul class=" grid list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
+        <li class="col-4">
+            <a class="layout-topbar-menu" [routerLink]="'/calender'" >
+                <span class="text-m">Calender</span>
+            </a>
+
+        </li>
+            <li class="col-offset-4"  >
+                <a class="layout-topbar-menu" [routerLink]="'/home'">
+                    <span class="text-m">Home</span>
+                </a>
+            </li>
+        </ul>
+    </div>
     <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': layoutService.state.profileSidebarVisible}">
         <button class="p-link layout-topbar-button p-button-rounded bg-blue-50 p-button-text">
             <i class="pi pi-calendar"></i>
@@ -23,4 +38,5 @@
             <span>Settings</span>
         </button>
     </div>
+
 </div>

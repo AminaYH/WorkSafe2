@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { BookingComponent } from './booking.component';
+import { CalenderComponent } from './calender.component';
 
 
 @NgModule({
     imports: [RouterModule.forChild([
-        { path: '', component: BookingComponent }
+        { path: '', component: CalenderComponent }
     ])],
     exports: [RouterModule]
 })
-export class BookingRoutingModule { }
+export class CalenderRoutingModule { }

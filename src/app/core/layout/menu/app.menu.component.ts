@@ -8,7 +8,7 @@ export const MENU_ITEMS: MenuItem[] = [
         items: [
             { label: 'Dashboard', icon: 'pi pi-fw pi-home', routerLink: ['/'] ,  } ,]
     },
-    {label: 'UI Components',visible:false,
+    {label: 'UI Components',
         items: [
             { label: 'Form Layout' , icon: 'pi pi-fw pi-id-card ', routerLink: ['/uikit/formlayout'],visible:false},
             { label: 'Input', icon: 'pi pi-fw pi-check-square', routerLink: ['/uikit/input'] ,visible:false      },
@@ -21,7 +21,7 @@ export const MENU_ITEMS: MenuItem[] = [
             { label: 'Panel', icon: 'pi pi-fw pi-tablet', routerLink: ['/uikit/panel'] ,visible:false      },
             { label: 'Overlay', icon: 'pi pi-fw pi-clone', routerLink: ['/uikit/overlay'] ,visible:false      },
             { label: 'Media', icon: 'pi pi-fw pi-image', routerLink: ['/uikit/media'] ,visible:false      },
-            { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu'], routerLinkActiveOptions: { paths: 'subset', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' } ,visible:false      },
+            { label: 'Menu', icon: 'pi pi-fw pi-bars', routerLink: ['/uikit/menu'], routerLinkActiveOptions: { paths: 'subset', queryParams: 'ignored', matrixParams: 'ignored', fragment: 'ignored' } ,      },
             { label: 'Message', icon: 'pi pi-fw pi-comment', routerLink: ['/uikit/message']   ,visible:false     },
             { label: 'Chart', icon: 'pi pi-fw pi-chart-bar', routerLink: ['/uikit/charts'] ,visible:false },
             { label: 'Misc', icon: 'pi pi-fw pi-circle', routerLink: ['/uikit/misc'] , visible:false

@@ -96,7 +96,6 @@ export class AppLayoutComponent implements OnDestroy {
                 'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
         }
     }
-
     get containerClass() {
         return {
             'layout-theme-light': this.layoutService.config.colorScheme === 'light',
@@ -107,7 +106,10 @@ export class AppLayoutComponent implements OnDestroy {
             'layout-overlay-active': this.layoutService.state.overlayMenuActive,
             'layout-mobile-active': this.layoutService.state.staticMenuMobileActive,
             'p-input-filled': this.layoutService.config.inputStyle === 'filled',
-            'p-ripple-disabled': !this.layoutService.config.ripple
+            'p-ripple-disabled': !this.layoutService.config.ripple,
+            'wrapper-expanded': this.layoutService.state.staticMenuDesktopInactive || this.layoutService.state.overlayMenuActive, // add a new class here;
+            'wrapper-collapsed': !this.layoutService.state.staticMenuDesktopInactive && !this.layoutService.state.overlayMenuActive, // add a new class here
+
         }
     }
 

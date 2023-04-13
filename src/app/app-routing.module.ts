@@ -12,7 +12,7 @@ import { AppLayoutComponent } from "./core/layout/app.layout.component";
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'pages', loadChildren: () => import('./demo/components/pages/pages.module').then(m => m.PagesModule) },
-                    { path: 'booking', loadChildren: () => import('./modules/calender/calender.module').then(m => m.CalenderModule) },
+                    { path: 'booking', loadChildren: () => import('./demo/components/calender/calender.module').then(m => m.CalenderModule) },
                 ]
             },
             { path: 'auth', loadChildren: () => import('./demo/components/auth/auth.module').then(m => m.AuthModule) },

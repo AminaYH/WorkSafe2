@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {LayoutService} from "../../../../core/layout/service/app.layout.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-chat',
@@ -13,5 +15,7 @@ import { Component } from '@angular/core';
 `]
 })
 export class ChatComponent {
+    constructor(public layoutService: LayoutService, public router: Router) { }
+
 
 }

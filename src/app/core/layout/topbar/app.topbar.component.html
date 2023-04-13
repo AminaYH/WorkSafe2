@@ -12,14 +12,27 @@
     <div  class=" z-5 align-items-center  flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
         <ul class=" grid list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
         <li class="col-4">
-            <a class="layout-topbar-menu" [routerLink]="'/calender'" >
-                <span class="text-m">Calender</span>
+            <a class="layout-topbar-menu" [routerLink]="'/home'" >
+                <span class="text-purple-500 hover:text-cyan-400">Home</span>
             </a>
 
         </li>
-            <li class="col-offset-4"  >
-                <a class="layout-topbar-menu" [routerLink]="'/home'">
-                    <span class="text-m">Home</span>
+            <li class=" col-3 col-offset-2"  >
+                <a class="layout-topbar-menu" [routerLink]="'/calendar'">
+                    <span class="text-purple-500 hover:text-cyan-400">Calendar</span>
+                </a>
+            </li>
+
+            <li class=" col-4 col-offset-2"  >
+                <a class="layout-topbar-menu" [routerLink]="'/chat'">
+                    <span class="text-purple-500 hover:text-cyan-400">Chat</span>
+                </a>
+            </li>
+
+
+            <li class=" col-4 col-offset-2"  >
+                <a class="layout-topbar-menu" [routerLink]="'/calendar'">
+                    <span class="text-purple-500 hover:text-cyan-400">Chat</span>
                 </a>
             </li>
         </ul>

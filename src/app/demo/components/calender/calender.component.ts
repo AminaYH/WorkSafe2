@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
 import { Message } from 'primeng/api';
+import {Leave, LeaveRequest} from 'src/app/demo/api/leave-request.model';
+import { LeaveRequestService } from 'src/app/shared/modules/leave-request.service';
 
-interface Leave {
-    type: string;
-    code: string;
-}
+
 @Component({
   selector: 'app-booking',
   templateUrl: './calender.component.html',
   styleUrls: ['./calender.component.scss']
 })
 export class CalenderComponent implements OnInit {
-
-  constructor() { }
+visible2: boolean=false;
     visible: boolean=false;
     messages: Message[]=[];
     formGroup!: FormGroup;
     leaveType: Leave[]=[];
+
+    date: Date[]=[];
+    selectedDate?: Date;
+    leaveRequests: LeaveRequest[]=[];
+
+    constructor(private leaveRequestService: LeaveRequestService) {}
+
 
 
   ngOnInit() {
@@ -34,6 +39,14 @@ export class CalenderComponent implements OnInit {
       this.formGroup = new FormGroup({
           selectedCity: new FormControl<Leave | null>(null)
       });
+      this.leaveRequestService.getApprovedRequests().subscribe(
+          (requests) => {
+              this.leaveRequests = requests;
+          },
+          (error) => {
+              console.log('Error getting leave requests:', error);
+          }
+      );
   }
     showDialog() {
         this.visible = true;
@@ -58,4 +71,7 @@ export class CalenderComponent implements OnInit {
         this.visible = false; // Hide the dialog after submission
     }
 
+    showDialog2() {
+        this.visible2=true; //show
+    }
 }

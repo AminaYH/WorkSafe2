@@ -1,0 +1,183 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "email": "john.doe@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Sales",
+            "address": {
+                "street": "123 Main St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "email": "jane.smith@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Marketing",
+            "address": {
+                "street": "456 Oak Ave",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 3,
+            "name": "Bob Johnson",
+            "email": "bob.johnson@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "IT",
+            "address": {
+                "street": "789 Maple Blvd",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 4,
+            "name": "Samantha Williams",
+            "email": "samantha.williams@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "HR",
+            "address": {
+                "street": "321 Pine St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 5,
+            "name": "David Lee",
+            "email": "david.lee@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Operations",
+            "address": {
+                "street": "987 Elm St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 6,
+            "name": "Sarah Kim",
+            "email": "sarah.kim@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Finance",
+            "address": {
+                "street": "456 Birch St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 7,
+            "name": "Michael Chen",
+            "email": "michael.chen@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Engineering",
+            "address": {
+                "street": "789 Oak St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 8,
+            "name": "Julia Lee",
+            "email": "julia.lee@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Marketing",
+            "address": {
+                "street": "123 Elm St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 11,
+            "name": "Hannah Lee",
+            "email": "hannah.lee@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Finance",
+            "address": {
+                "street": "456 West St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 12,
+            "name": "Maggie Johnson",
+            "email": "maggie.johnson@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Marketing",
+            "address": {
+                "street": "789 North Ave",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 13,
+            "name": "Oliver Wang",
+            "email": "oliver.wang@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "IT",
+            "address": {
+                "street": "123 South Blvd",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 14,
+            "name": "Emily Rodriguez",
+            "email": "emily.rodriguez@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "HR",
+            "address": {
+                "street": "456 East St",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        },
+        {
+            "id": 15,
+            "name": "Jacob Kim",
+            "email": "jacob.kim@example.com",
+            "phone": "+1 (555) 555-5555",
+            "department": "Sales",
+            "address": {
+                "street": "789 West Ave",
+                "city": "Anytown",
+                "state": "CA",
+                "zip": "12345"
+            }
+        }
+    ],
+    "admin": {
+        "id": 20,
+        "name": "eya touili ",
+        "email": "admin@example.com"
+    }
+}
+
+
+
+
+

@@ -1,8 +1,8 @@
 <div>
-    <div >
-<p-button (click)="showDialog()"  label="leave request "></p-button>
-<p-dialog header="Request" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
-<ng-template pTemplate="content" >
+    <div    >
+<p-button (click)="showDialog()"   class="ml-4" label="leave request "></p-button>
+<p-dialog  id="dialog1" header="Request" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
+<ng-template pTemplate="content"  >
 
     <form (submit)="submitForm()">
 
@@ -33,12 +33,17 @@
         </div>
         <div class="field col-12 md:col-6">
             <label htmlFor="StartDate" >Start Date</label>
-            <input class="ng-invalid " pInputText id="StartDate" mask="99/99/9999" placeholder="01/01/2023" slotChar="mm/dd/yyyy" />
+
+            <form [formGroup]="formGroup">
+                <p-calendar formControlName="date"></p-calendar>
+            </form>
         </div>
         <div class="field col-12 md:col-6">
             <label htmlFor="EndDate">End Date</label>
-            <input pInputText id="EndDate" mask="99/99/9999" placeholder="01/01/2023" slotChar="mm/dd/yyyy" />
-        </div>
+
+            <form [formGroup]="formGroup">
+                <p-calendar formControlName="date"></p-calendar>
+            </form>        </div>
         <div class=" col-12 md:col-12 z-0">
 
          <span class="p-float-label">
@@ -57,12 +62,37 @@
 </ng-template>
 </p-dialog>
   </div>
-    <div class="field col-3  ">
+    <div class="field   ">
     <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
     </div>
+<div class="grid">
+    <div class=" justify-content-start  ">
+        <p-calendar class="max-w-full p-datepicker-touch-p	shadow-5"  [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
+        <ul>
+            <li *ngFor="let request of leaveRequests">
+                {{request.employeeName}}: {{request.startDate | date}} - {{request.endDate | date}}
+            </li>
+        </ul>
+    </div>
+    <div class="card col-offset-6 justify-content-end right-0 " style="height: 15rem; width :15rem " >
 
-    <div>
-
+        <p-button (click)="showDialog2()"  icon="src/assets/layout/images/fullscreen_exit_white_24dp.svg" class="p-button-rounded" label="Show" ></p-button>
+        <p-dialog header="leave policy" [(visible)]="visible2" [style]="{ width: '50vw', height: '300px' }" id="dialog2">
+            <p>
+               <span> Annual leave or vacation time </span>: A set amount of paid time off that employees can use for personal or vacation purposes.
+               <span> Sick leave </span>: Paid time off for employees who are ill or have a medical condition.
+                Personal leave: Paid time off for personal reasons, such as a family emergency or bereavement.
+                Parental leave: Paid time off for new parents to care for a newborn or newly adopted child.
+                Maternity leave: Paid time off for expectant mothers to give birth and recover.
+                Paternity leave: Paid time off for expectant fathers to bond with a newborn or newly adopted child.
+                Family and Medical Leave Act (FMLA) leave: Unpaid time off for employees who need to care for a family member or themselves due to a serious health condition.
+                Bereavement leave: Paid time off for employees who have suffered the loss of a family member.
+                Jury duty leave: Paid time off for employees who are serving on a jury.
+                Military leave: Paid time off for employees who are serving in the military or who are called up for active duty.
+                Holidays: Paid time off for recognized holidays, such as Christmas or Thanksgiving.
+            </p>
+        </p-dialog>
 
     </div>
+</div>
 </div>

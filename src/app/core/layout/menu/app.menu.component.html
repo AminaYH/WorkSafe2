@@ -2,15 +2,12 @@
 <ul class="layout-menu">
     <ng-container *ngFor="let item of model; let i = index;">
         <li app-menuitem *ngIf="!item.separator" [item]="item" [index]="i" [root]="true" ></li>
-
         <li *ngIf="item.separator" class="menu-separator"></li>
     </ng-container>
-
 </ul>
     <div class="menu-item  flex flex-colum " >
         <div class=" border-solid align-items-center justify-content-center  mb-2"
              style="width:3.8rem;height:3.8rem; border-radius:10px ;border-color: #424bff ">
-
         <a routerLink="/dashboard" class="menu-item">
             <i class="pi pi-fw pi-home text-white-alpha-90" style="font-size: large"></i>
             <span class="label text-white-alpha-60">Dashboard</span>
@@ -43,7 +40,14 @@
             <span class="label text-white-alpha-60">Setting</span>
         </a>
         </div>
+        <div class="flex col-2 border-solid align-items-center justify-content-center  mb-2"
+             style="width:3.8rem;height:3.8rem; border-radius:10px ;border-color: #424bff ">
 
+            <a routerLink="/char" class="menu-item">
+                <i class="pi pi-fw pi-cog text-white-alpha-90" style="font-size: large"></i>
+                <span class="label text-white-alpha-60">Setting</span>
+            </a>
+        </div>
     </div>
     <div class=" mt-6 border-2 border-solid overflow-hidden flex flex-colum "    style="width:15rem;height:5rem ;border-color: #424bff ;transform:translateX(-12%) translateY(190%)">
 

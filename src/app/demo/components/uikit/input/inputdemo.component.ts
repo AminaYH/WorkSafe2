@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectItem } from 'primeng/api';
-import { CountryService } from 'src/app/demo/service/country.service';
+import { CountryService } from 'src/app/shared/service/country.service';
 
 @Component({
     templateUrl: './inputdemo.component.html'

@@ -12,7 +12,7 @@
         &.layout-overlay {
             .layout-main-container {
                 margin-left: 0;
-                padding-left: 2rem;
+                padding-left: 0rem;
             }
 
             .layout-sidebar {
@@ -33,7 +33,7 @@
 
         &.layout-static {
             .layout-main-container {
-                margin-left: 300px;
+                margin-left: 200px;
             }
 
             &.layout-static-inactive {
@@ -44,7 +44,7 @@
 
                 .layout-main-container {
                     margin-left: 0;
-                    padding-left: 2rem;
+                    padding-left: 0rem;
                 }
             }
         }

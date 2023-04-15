@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { LeaveRequest } from 'src/app/demo/api/leave-request.model';
+import { LeaveRequest } from 'src/app/shared/api/leave-request.model';
 
 @Injectable({
     providedIn: 'root'

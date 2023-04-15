@@ -1,14 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Product } from '../../../shared/api/product';
-import { ProductService } from '../../../shared/service/product.service';
+import { Product } from 'src/app/shared/api/product';
+import { ProductService } from 'src/app/shared/service/product.service';
 import { Subscription } from 'rxjs';
-import { LayoutService } from 'src/app/employee/layout/service/app.layout.service';
+import { LayoutService } from 'src/app/admin/layout/service/app.layout.service';
 
 @Component({
-    templateUrl: './dashboard.component.html',
+    templateUrl: './leaderboard.component.html',
 })
-export class DashboardComponent implements OnInit, OnDestroy {
+export class leaderboardComponent implements OnInit, OnDestroy {
 
     items!: MenuItem[];
 

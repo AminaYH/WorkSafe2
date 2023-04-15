@@ -1,0 +1,61 @@
+<div class="layout-topbar">
+
+    <button #menubutton class="p-link layout-menu-button layout-topbar-button justify-content-start ml-0 " (click)="LayoutService.onMenuToggle()"  >
+        <img src="../../../../../assets/layout/images/icons.svg" width="30">   </button>
+    <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button" (click)="LayoutService.showProfileSidebar()">
+        <i class="pi pi-ellipsis-v"></i>
+    </button>
+    <a class="layout-topbar-logo" routerLink=" ">
+        <span class="text-500 text-m">WorkSafe</span>
+    </a>
+
+    <div  class=" z-5 align-items-center  flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 px-6 lg:px-0 z-2" style="top:120px">
+        <ul class=" grid list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row cursor-pointer">
+            <div class="col-3 ">
+                <li class=" mx-2">
+                    <a [routerLink]="'/home'" >
+                        <span class="text-purple-500 hover:text-cyan-400">Home</span>
+                    </a>
+
+                </li>
+            </div >
+            <div class="col-3 ">
+                <li class=" mx-2 "  >
+                    <a routerLink="/booking" >
+                        <span class="text-purple-500 hover:text-cyan-400">Calendar</span>
+                    </a>
+                </li>
+            </div>
+            <div class="col-3 ">
+                <li class="mx-2 "  >
+                    <a class="layout-topbar-menu" [routerLink]="'auth/chat'">
+                        <span class="text-purple-500 hover:text-cyan-400">Chat</span>
+                    </a>
+                </li>
+            </div>
+            <div class="col-3 ">
+                <li class=" mx-2 "  >
+                    <a class="layout-topbar-menu" [routerLink]="'auth/chat'">
+                        <span class="text-purple-500 hover:text-cyan-400">Project</span>
+                    </a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div #topbarmenu class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active': LayoutService.state.profileSidebarVisible}">
+        <button class="p-link layout-topbar-button p-button-rounded bg-blue-50 p-button-text">
+            <i class="pi pi-bell zoomin animation-duration-1000 animation-iteration-infinite "></i>
+            <span>Calendar</span>
+        </button>
+        <button class="p-link layout-topbar-button p-button-rounded bg-blue-100 p-button-text">
+            <i class="pi pi-user" style=""></i>
+            <span>Profile</span>
+        </button>
+        <button class="p-link layout-topbar-button p-button-rounded bg-blue-50 p-button-text" [routerLink]="'/documentation'">
+            <i class="pi pi-cog pi-spin"></i>
+            <span>Options</span>
+        </button>
+    </div>
+
+</div>
+

@@ -1,0 +1,26 @@
+.menu-item  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-color: rgba(14, 26, 100, 0);
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+::ng-deep .ui-menu,.ui-menu .ui-menu-child{
+    border: 0px;
+    background:#5393bc 0 0 repeat-x !important;
+}
+::ng-deep .ui-menu .ui-menuitem .ui-menuitem-link:hover{
+    background-color: #5393bc;
+}
+::ng-deep .ui-menu .ui-menuitem .ui-state-active{
+    background-color: #5393bc;
+}
+::ng-deep .ui-menu .ui-menuitem.ui-menuitem-active>.ui-menuitem-link,
+.ui-menu .ui-menuitem .ui-menuitem-link:hover{
+    background-color:#186ba0;
+}
+::ng-deep .my-menu-item{
+    background: #5393bc !important;
+}

@@ -1,38 +1,44 @@
 export interface CompanyData {
-    users: User[];
+    users: Employee[];
     admin: Admin;
 
 }
-interface User {
-    id: number;
-    name: string;
-    email: string;
-    phone: string;
-    department: Department;
-    address: {
-        street: string;
-        city: string;
+export class Employee {
+    id?: number;
+    name?: string;
+    username?:string;
+    email?: string;
+    age?: string;
+    departement?: string;
+    address?: string;
 
-        state: string;
-        zip: string;
-    };
+    role?: Rol[];
+    password?: string;
+
 
 }
 
 
-interface Admin {
-    id: number;
+export interface Rol {
+    createdAt: string;
+    modifiedAt?: string;
+    roleId: number;
     name: string;
-    email: string;
-    phone: string;
-    department: string;
-    address: {
+}
+
+interface Admin {
+    id?: string;
+    name?: string;
+    email?: string;
+    phone?: string;
+    department?: string;
+    address?: {
         street: string;
         city: string;
         state: string;
         zip: string;
     };
 
-    role: string;
+    role?: string;
 }
 export type Department = 'Sales' | 'Marketing' | 'IT' | 'HR' | 'Operations';

@@ -1,0 +1,39 @@
+@hostname = http://localhost
+@port = 8080
+@host = {{hostname}}:{{port}}/api
+@contentType = application/json
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqZWFucGllcm0iLCJyb2xlcyI6WyJST0xFX0FETUlOIiwiUk9MRV9NQU5BR0VSIiwiUk9MRV9VU0VSIl0sImlzcyI6Im1lbmRvemEiLCJleHAiOjE2Mzg0MDY1MTV9.0-QmlYPm0oIwTtxuEc7B_FYzoptEeI5mQErAV3W8gAc
+
+## LOGIN USER
+
+POST {{host}}/login
+Content-Type: {{contentType}}
+
+{
+  "username": "jeanpierm",
+  "password": "314159"
+}
+
+### GET USERS
+
+GET {{host}}/users
+Authorization: Bearer {{token}}
+
+### CREATE USER
+
+POST {{host}}/users
+Content-Type: {{contentType}}
+
+{
+  "name": "Billy",
+  "email": "billy@com",
+  "username": "billy",
+  "password": "12345"
+}
+
+### DELETE USER
+@userId = 19
+
+DELETE {{host}}/users/{{userId}}
+Authorization: Bearer {{token}}
+

@@ -10,9 +10,10 @@ import { AppLayoutComponent } from "./employee/layout/app.layout.component";
                 path: '', component: AppLayoutComponent,
                 children: [
                     { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
-                    { path: 'uikit', loadChildren: () => import('./demo/components/uikit/uikit.module').then(m => m.UIkitModule) },
                     { path: 'pages', loadChildren: () => import('./shared/components/pages/pages.module').then(m => m.PagesModule) },
                     { path: 'booking', loadChildren: () => import('./employee/calender/calender.module').then(m => m.CalenderModule) },
+                    { path: 'crudusers', loadChildren: () => import('src/app/admin/crudusers/crud.module').then(m => m.CrudModule) },
+
                 ]
             },
             { path: 'auth', loadChildren: () => import('./shared/components/auth/auth.module').then(m => m.AuthModule) },

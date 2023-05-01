@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Product } from 'src/app/shared/api/product';
-import { ProductService } from 'src/app/shared/service/product.service';
+import { User } from 'src/app/shared/api/product';
+import { UserService } from 'src/app/shared/service/product.service';
 import { Subscription } from 'rxjs';
 import { LayoutService } from 'src/app/admin/layout/service/app.layout.service';
 
@@ -12,7 +12,7 @@ export class leaderboardComponent implements OnInit, OnDestroy {
 
     items!: MenuItem[];
 
-    products!: Product[];
+    products!: User[];
 
     chartData: any;
 
@@ -20,7 +20,7 @@ export class leaderboardComponent implements OnInit, OnDestroy {
 
     subscription!: Subscription;
 
-    constructor(private productService: ProductService, public layoutService: LayoutService) {
+    constructor(private productService: UserService, public layoutService: LayoutService) {
         this.subscription = this.layoutService.configUpdate$.subscribe(() => {
             this.initChart();
         });

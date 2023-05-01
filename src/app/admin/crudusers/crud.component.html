@@ -1,0 +1,90 @@
+<p-table
+    #dt
+    responsiveLayout="stack"
+    dataKey="userId"
+    [value]="employees"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+    [rowsPerPageOptions]="[10, 25, 50]"
+    [paginator]="true"
+    [filterDelay]="0"
+    [globalFilterFields]="['name', 'email', 'username']">
+
+    <!-- Caption -->
+    <ng-template pTemplate="caption">
+        <div class="flex justify-content-between align-items-center">
+            <div class="">
+
+                <div class="text-2xl text-700 my-3">List of Users</div>
+            </div>
+            <button
+                pButton
+                pRipple
+                type="button"
+                (click)="showDialog()"
+                class="p-button-rounded p-button-sm"
+                icon="pi pi-plus"
+                label="Create person"
+            ></button>
+            <app-users-dialog></app-users-dialog>
+
+            <div>
+        <span class="p-input-icon-left mr-3">
+          <i class="pi pi-search"></i>
+          <input
+              #searchText
+              pInputText
+              type="text"
+              (input)="dt.filterGlobal(searchText.value, 'contains')"
+              placeholder="Global Search"
+          />
+        </span>
+            </div>
+        </div>
+    </ng-template>
+
+    <!-- Header -->
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="id">
+                ID
+                <p-sortIcon field="id"></p-sortIcon>
+            </th>
+            <th pSortableColumn="name">
+                Name
+                <p-sortIcon field="name"></p-sortIcon>
+            </th>
+            <th pSortableColumn="username">
+                Username
+                <p-sortIcon field="username"></p-sortIcon>
+            </th>
+            <th pSortableColumn="email">
+                Email
+                <p-sortIcon field="email"></p-sortIcon>
+            </th>
+
+
+        </tr>
+    </ng-template>
+
+    <!-- Body -->
+    <ng-template pTemplate="body" let-employee >
+        <tr>
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.username }}</td>
+            <td>{{ employee.email}}</td>
+
+            <td class="flex justify-content-around w-9rem">
+                <button
+                    pButton
+                    pRipple
+                    type="button"
+                    class="p-button-danger p-button-outlined p-button-rounded"
+                    icon="pi pi-trash"
+                ></button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
+

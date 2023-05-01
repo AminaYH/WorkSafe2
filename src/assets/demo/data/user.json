@@ -1,0 +1,18 @@
+{
+    "userId": 123,
+    "name": "John Doe",
+    "username": "johndoe",
+    "email": "johndoe@example.com",
+    "phone": "555-555-5555",
+    "department": "Marketing",
+    "address": {
+        "street": "123 Main St",
+        "city": "Anytown",
+        "state": "CA",
+        "zip": "12345"
+    },
+    "createdAt": "2022-01-01T00:00:00.000Z",
+    "modifiedAt": "2022-01-02T00:00:00.000Z",
+    "roles": ["admin", "user"],
+    "password": "mysecretpassword"
+}

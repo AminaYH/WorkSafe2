@@ -16,7 +16,7 @@ visible2: boolean=false;
     messages: Message[]=[];
     formGroup!: FormGroup;
     leaveType: Leave[]=[];
-
+position:string='';
     date: Date[]=[];
     selectedDate?: Date;
     leaveRequests: LeaveRequest[]=[];
@@ -71,7 +71,8 @@ visible2: boolean=false;
         this.visible = false; // Hide the dialog after submission
     }
 
-    showDialog2() {
+    showDialog2(  position:string) {
         this.visible2=true; //show
+        this.position=position;
     }
 }

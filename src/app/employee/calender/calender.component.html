@@ -1,6 +1,7 @@
 <div>
-    <div    >
-<p-button (click)="showDialog()"   class="ml-4" label="leave request "></p-button>
+
+    <div  class="ml-6"  >
+<p-button (click)="showDialog()"   class="ml-4" label="leave request  "></p-button>
 <p-dialog  id="dialog1" header="Request" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
 <ng-template pTemplate="content"  >
 
@@ -66,33 +67,39 @@
     <p-messages [(value)]="messages" [enableService]="false" [closable]="false"></p-messages>
     </div>
 <div class="grid">
-    <div class=" justify-content-start  ">
-        <p-calendar class="max-w-full p-datepicker-touch-p	shadow-5"  [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
+
+
+    <div class=" justify-content-start mt-7 ml-8 "  >
+        <p-calendar class=" p-datepicker-touch-p  	shadow-5"  [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
         <ul>
             <li *ngFor="let request of leaveRequests">
                 {{request.employeeName}}: {{request.startDate | date}} - {{request.endDate | date}}
             </li>
         </ul>
     </div>
-    <div class="card col-offset-6 justify-content-end right-0 " style="height: 15rem; width :15rem " >
 
-        <p-button (click)="showDialog2()"  icon="src/assets/layout/images/fullscreen_exit_white_24dp.svg" class="p-button-rounded" label="Show" ></p-button>
-        <p-dialog header="leave policy" [(visible)]="visible2" [style]="{ width: '50vw', height: '300px' }" id="dialog2">
-            <p>
-               <span> Annual leave or vacation time </span>: A set amount of paid time off that employees can use for personal or vacation purposes.
-               <span> Sick leave </span>: Paid time off for employees who are ill or have a medical condition.
-                Personal leave: Paid time off for personal reasons, such as a family emergency or bereavement.
-                Parental leave: Paid time off for new parents to care for a newborn or newly adopted child.
-                Maternity leave: Paid time off for expectant mothers to give birth and recover.
-                Paternity leave: Paid time off for expectant fathers to bond with a newborn or newly adopted child.
-                Family and Medical Leave Act (FMLA) leave: Unpaid time off for employees who need to care for a family member or themselves due to a serious health condition.
-                Bereavement leave: Paid time off for employees who have suffered the loss of a family member.
-                Jury duty leave: Paid time off for employees who are serving on a jury.
-                Military leave: Paid time off for employees who are serving in the military or who are called up for active duty.
-                Holidays: Paid time off for recognized holidays, such as Christmas or Thanksgiving.
-            </p>
+
+    <div class="card md:col-offset-3 lg:col-offset-5 justify-content-end right-0 " style="height: 15rem; width :15rem;background:rgba(48,42,133,0.62) " >
+<div class="mt-4 mx-3">
+    <p class="text-white-alpha-40">open to check leave policy of your company</p>
+        <p-button (click)="showDialog2('bottom')"  icon="src/assets/layout/images/fullscreen_exit_white_24dp.svg" class="p-button-rounded " label="Leave policy" ></p-button>
+</div>  <p-dialog header="leave policy" [(visible)]="visible2" [style]="{ width: '50vw', height: '500px' }" id="dialog2">
+
+         <h6> Annual leave or vacation time </h6> A set amount of paid time off that employees can use for personal or vacation purposes.
+         <h6> Sick leave </h6>Paid time off for employees who are ill or have a medical condition.
+        <h6> Personal leave</h6> Paid time off for personal reasons, such as a family emergency or bereavement.
+        <h6>Parental leave</h6> Paid time off for new parents to care for a newborn or newly adopted child.
+        <h6>Maternity leave</h6> Paid time off for expectant mothers to give birth and recover.
+        <h6> Paternity leave</h6> Paid time off for expectant fathers to bond with a newborn or newly adopted child.
+        <h6> Family and Medical Leave Act (FMLA) leave</h6> Unpaid time off for employees who need to care for a family member or themselves due to a serious health condition.
+        <h6> Bereavement leave</h6> Paid time off for employees who have suffered the loss of a family member.
+        <h6>   Jury duty leave</h6> Paid time off for employees who are serving on a jury.
+        <h6> Military leave</h6> Paid time off for employees who are serving in the military or who are called up for active duty.
+        <h6> Holidays</h6> Paid time off for recognized holidays, such as Christmas or Thanksgiving.
+
         </p-dialog>
 
     </div>
-</div>
+
+    </div>
 </div>

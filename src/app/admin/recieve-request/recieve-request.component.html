@@ -1,0 +1,30 @@
+<div class="col-12 xl:col-7">
+    <div class="card">
+        <h5>Recent Sales</h5>
+        <p-table [value]="leaveRequest" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>username</th>
+                    <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                    <th pSortableColumn="price">Email <p-sortIcon field="price"></p-sortIcon></th>
+                    <th>Departement</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-leaveRequest>
+                <tr>
+                    <td style="width: 35%; min-width: 7rem;">{{leaveRequest.id}}</td>
+
+                    <td style="width: 35%; min-width: 7rem;">{{leaveRequest.name}}</td>
+
+
+                    <td style="width: 35%; min-width: 7rem;">{{leaveRequest.username}}</td>
+                    <td style="width: 35%; min-width: 8rem;">{{leaveRequest.reason}}</td>
+                    <td style="width: 15%;">
+                        <button pButton pRipple type="button" icon="pi pi-search" class="p-button p-component p-button-text p-button-icon-only"></button>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+
+</div>

@@ -2,6 +2,8 @@ import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 import { AppLayoutComponent } from "./employee/layout/app.layout.component";
+// import {AuthGuard} from "./shared/components/auth/auth.gard";
+
 
 @NgModule({
     imports: [
@@ -9,10 +11,12 @@ import { AppLayoutComponent } from "./employee/layout/app.layout.component";
             {
                 path: '', component: AppLayoutComponent,
                 children: [
-                    { path: '', loadChildren: () => import('./demo/components/dashboard/dashboard.module').then(m => m.DashboardModule) },
+                    { path: '', loadChildren: () => import('./admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
                     { path: 'pages', loadChildren: () => import('./shared/components/pages/pages.module').then(m => m.PagesModule) },
-                    { path: 'booking', loadChildren: () => import('./employee/calender/calender.module').then(m => m.CalenderModule) },
-                    { path: 'crudusers', loadChildren: () => import('src/app/admin/crudusers/crud.module').then(m => m.CrudModule) },
+                    { path: 'booking', loadChildren: () => import('./employee/calender/calender.module').then(m => m.CalenderModule), },
+                    { path: 'crudusers', loadChildren: () => import('src/app/admin/crudusers/crud.module').then(m => m.CrudModule) ,},
+                    { path: 'recieve-request', loadChildren: () => import('src/app/admin/recieve-request/recieve-request.module').then(m => m.RecieveRequestModule) },
+                    { path: 'dashboard', loadChildren: () => import('src/app/admin/dashboard/dashboard.module').then(m => m.DashboardModule) },
 
                 ]
             },
@@ -22,6 +26,7 @@ import { AppLayoutComponent } from "./employee/layout/app.layout.component";
 
             { path: 'notfound', component: NotfoundComponent },
             { path: '**', redirectTo: '/notfound' },
+
         ], { scrollPositionRestoration: 'enabled', anchorScrolling: 'enabled', onSameUrlNavigation: 'reload' })
     ],
     exports: [RouterModule]

@@ -1,0 +1,101 @@
+<div class="grid">
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+                <div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 lg:col-6 xl:col-3">
+        <div class="card mb-0">
+            <div class="flex justify-content-between mb-3">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-12 xl:col-6">
+        <div class="card">
+            <h5>Recent Sales</h5>
+            <p-table [value]="employee" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>username</th>
+                        <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+                        <th pSortableColumn="price">Email <p-sortIcon field="price"></p-sortIcon></th>
+                        <th>Departement</th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-employee>
+                    <tr>
+
+                        <td style="width: 35%; min-width: 7rem;">{{employee.username}}</td>
+
+
+                        <td style="width: 35%; min-width: 7rem;">{{employee.name}}</td>
+                        <td style="width: 35%; min-width: 8rem;">{{employee.email}}</td>
+                        <td style="width: 15%;">
+                            <button pButton pRipple type="button" icon="pi pi-search" class="p-button p-component p-button-text p-button-icon-only"></button>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+        <div class="card">
+            <div class="card">
+                <p-chart type="line" [data]="data" [options]="options"></p-chart>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 xl:col-6">
+        <div class="card">
+            <h5>Sales Overview</h5>
+            <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+        </div>
+
+        <div class="card">
+            <div class="flex align-items-center justify-content-between mb-4">
+                <h5>Notifications</h5>
+                <div>
+                    <button pButton type="button" icon="pi pi-ellipsis-v" class="p-button-rounded p-button-text p-button-plain" (click)="menu.toggle($event)"></button>
+                    <p-menu #menu [popup]="true" [model]="items"></p-menu>
+                </div>
+            </div>
+
+            <span class="block text-600 font-medium mb-3">TODAY</span>
+
+
+            <span class="block text-600 font-medium mb-3">YESTERDAY</span>
+            <ul class="p-0 m-0 list-none">
+
+
+            </ul>
+        </div>
+
+
+    </div>
+</div>
+

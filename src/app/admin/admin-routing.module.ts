@@ -5,6 +5,7 @@ import {AdminComponent} from "./admin.component";
 
 @NgModule({
     imports: [RouterModule.forChild([
+
         { path: '**', redirectTo: '/notfound' }
     ])],
     exports: [RouterModule]

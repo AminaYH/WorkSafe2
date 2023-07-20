@@ -5,11 +5,19 @@ import { AdminRoutingModule } from './admin-routing.module';
 import {AdminComponent} from "./admin.component";
 import {ReactiveFormsModule} from "@angular/forms";
 import {PrimeNgUIComponentModule} from "src/app/shared/modules/primeng-ui-component.module";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {CrudComponent} from "./crudusers/crud.component";
+import {RecieveRequestComponent} from "./recieve-request/recieve-request.component";
+import {CrudModule} from "./crudusers/crud.module";
 
 
 @NgModule({
     declarations: [
-        AdminComponent
+        AdminComponent,
+        DashboardComponent,
+        CrudComponent,
+        RecieveRequestComponent
+
 
     ],
 
@@ -17,7 +25,8 @@ import {PrimeNgUIComponentModule} from "src/app/shared/modules/primeng-ui-compon
         CommonModule,
         AdminRoutingModule,
         ReactiveFormsModule,
-        PrimeNgUIComponentModule
+        PrimeNgUIComponentModule,
+        CrudModule
     ]
 })
 export class AdminModule { }

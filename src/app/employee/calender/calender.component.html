@@ -1,64 +1,102 @@
-<div>
+<div class="">
 
-    <div  class="ml-6"  >
+    <div  class="grid"  >
+        <div class="col-2  ml-6">
 <p-button (click)="showDialog()"   class="ml-4" label="leave request  "></p-button>
+        </div>
+        <div class="col-2 ">
+            <p-button (click)="showDialog2('bottom')"  icon="src/assets/layout/images/fullscreen_exit_white_24dp.svg" class="p-button-rounded " label="Leave policy" ></p-button>
+        </div>  <p-dialog header="leave policy" [(visible)]="visible2" [style]="{ width: '50vw', height: '500px' }" id="dialog2">
+
+        <h6> Annual leave or vacation time </h6> A set amount of paid time off that employees can use for personal or vacation purposes.
+        <h6> Sick leave </h6>Paid time off for employees who are ill or have a medical condition.
+        <h6> Personal leave</h6> Paid time off for personal reasons, such as a family emergency or bereavement.
+        <h6>Parental leave</h6> Paid time off for new parents to care for a newborn or newly adopted child.
+        <h6>Maternity leave</h6> Paid time off for expectant mothers to give birth and recover.
+        <h6> Paternity leave</h6> Paid time off for expectant fathers to bond with a newborn or newly adopted child.
+        <h6> Family and Medical Leave Act (FMLA) leave</h6> Unpaid time off for employees who need to care for a family member or themselves due to a serious health condition.
+        <h6> Bereavement leave</h6> Paid time off for employees who have suffered the loss of a family member.
+        <h6>   Jury duty leave</h6> Paid time off for employees who are serving on a jury.
+        <h6> Military leave</h6> Paid time off for employees who are serving in the military or who are called up for active duty.
+        <h6> Holidays</h6> Paid time off for recognized holidays, such as Christmas or Thanksgiving.
+
+    </p-dialog>
 <p-dialog  id="dialog1" header="Request" [(visible)]="visible" [modal]="true" [style]="{ width: '50vw' }" [draggable]="false" [resizable]="false">
 <ng-template pTemplate="content"  >
 
-    <form (submit)="submitForm()">
 
 <div class="card bg-indigo-50">
     <h5>leave </h5>
-    <div class="p-fluid p-formgrid grid">
+    <div class="p-fluid  grid">
         <div class="field col-12 md:col-6">
-            <label htmlFor="firstname2">Firstname</label>
-            <input pInputText id="firstname2" type="text" />
-        </div>
-        <div class="field col-12 md:col-6">
-            <label htmlFor="lastname2">Lastname</label>
-            <input pInputText id="lastname2" type="text" />
-        </div>
-        <div class="field col-12 md:col-6">
-            <label htmlFor="id">Employee ID</label>
-            <input pInputText id="secret" />
+                <label for="id">id</label>
+                <input
+                    id="id"
+                    type="text"
+                    class="w-full"
+                    pInputText
+                    [(ngModel)]="this.leaveRequest.id" required autofocus
+                />
         </div>
         <div class="field col-12 md:col-6">
-            <label htmlFor="Department">Department</label>
-            <input pInputText id="Department" />
+            <label for="name">Name</label>
+            <input
+                id="name"
+                type="text"
+                class="w-full"
+                pInputText
+                [(ngModel)]="this.leaveRequest.name" required autofocus
+            />
         </div>
-        <div class="field col-12 md:col-6 z-5" style="transform: translateY(8%)">
-            <form [formGroup]="formGroup">
-                <label htmlFor="leaveType">leave type </label>
-                <p-dropdown formControlName="leave type" [options]="leaveType" optionLabel="type"></p-dropdown>
-            </form>
+        <div class="field col-12 md:col-6">
+            <label for="username">Username</label>
+            <input
+                id="username"
+                type="text"
+                class="w-full"
+                pInputText
+                [(ngModel)]="this.leaveRequest.username" required autofocus
+            />
         </div>
+        <div class="field col-12 md:col-6">
+            <label for="username">Deapartement</label>
+            <input
+                id="Deapartement"
+                type="text"
+                class="w-full"
+                pInputText
+                [(ngModel)]="this.leaveRequest.Department" required autofocus
+            />
+        </div>
+
         <div class="field col-12 md:col-6">
             <label htmlFor="StartDate" >Start Date</label>
 
-            <form [formGroup]="formGroup">
-                <p-calendar formControlName="date"></p-calendar>
-            </form>
+                <p-calendar formControlName="date" [(ngModel)]="this.leaveRequest.startDate" ></p-calendar>
         </div>
         <div class="field col-12 md:col-6">
             <label htmlFor="EndDate">End Date</label>
 
-            <form [formGroup]="formGroup">
-                <p-calendar formControlName="date"></p-calendar>
-            </form>        </div>
+                <p-calendar formControlName="date" [(ngModel)]="this.leaveRequest.endDate"></p-calendar>
+                 </div>
         <div class=" col-12 md:col-12 z-0">
 
          <span class="p-float-label">
-      <textarea id="float-input" rows="6" cols="50" pInputTextarea></textarea>
-            <label for="float-input">Reason for Leave </label>
-        </span>
+        <label for="reason">reason</label>
+            <input
+                id="reason"
+                type="text"
+                class="w-full"
+                pInputText
+                [(ngModel)]="this.leaveRequest.reason" required autofocus
+            />        </span>
         </div>
         <div class="field lg:col-offset-5 md:col-3 " >
-        <button pButton label="send" (click)="addMessages()"></button>
+        <button pButton label="send" (click)="sendLeaveRequest()"></button>
 
         </div>
     </div>
 </div>
-    </form>
 
 </ng-template>
 </p-dialog>
@@ -73,33 +111,13 @@
         <p-calendar class=" p-datepicker-touch-p  	shadow-5"  [(ngModel)]="date" [inline]="true" [showWeek]="true"></p-calendar>
         <ul>
             <li *ngFor="let request of leaveRequests">
-                {{request.employeeName}}: {{request.startDate | date}} - {{request.endDate | date}}
+                {{request.name}}: {{request.startDate | date}} - {{request.endDate | date}}
             </li>
         </ul>
     </div>
 
 
-    <div class="card md:col-offset-3 lg:col-offset-5 justify-content-end right-0 " style="height: 15rem; width :15rem;background:rgba(48,42,133,0.62) " >
-<div class="mt-4 mx-3">
-    <p class="text-white-alpha-40">open to check leave policy of your company</p>
-        <p-button (click)="showDialog2('bottom')"  icon="src/assets/layout/images/fullscreen_exit_white_24dp.svg" class="p-button-rounded " label="Leave policy" ></p-button>
-</div>  <p-dialog header="leave policy" [(visible)]="visible2" [style]="{ width: '50vw', height: '500px' }" id="dialog2">
 
-         <h6> Annual leave or vacation time </h6> A set amount of paid time off that employees can use for personal or vacation purposes.
-         <h6> Sick leave </h6>Paid time off for employees who are ill or have a medical condition.
-        <h6> Personal leave</h6> Paid time off for personal reasons, such as a family emergency or bereavement.
-        <h6>Parental leave</h6> Paid time off for new parents to care for a newborn or newly adopted child.
-        <h6>Maternity leave</h6> Paid time off for expectant mothers to give birth and recover.
-        <h6> Paternity leave</h6> Paid time off for expectant fathers to bond with a newborn or newly adopted child.
-        <h6> Family and Medical Leave Act (FMLA) leave</h6> Unpaid time off for employees who need to care for a family member or themselves due to a serious health condition.
-        <h6> Bereavement leave</h6> Paid time off for employees who have suffered the loss of a family member.
-        <h6>   Jury duty leave</h6> Paid time off for employees who are serving on a jury.
-        <h6> Military leave</h6> Paid time off for employees who are serving in the military or who are called up for active duty.
-        <h6> Holidays</h6> Paid time off for recognized holidays, such as Christmas or Thanksgiving.
-
-        </p-dialog>
-
-    </div>
 
     </div>
 </div>

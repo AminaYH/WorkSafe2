@@ -33,13 +33,13 @@ export class CrudComponent implements OnInit {
     }
 
     updateEmployee(id: number){
-        this.router.navigate(['update-employee', id]);
     }
 
     deleteEmployee(id: number){
         this.employeeService.deleteEmployee(id).subscribe( data => {
             console.log(data);
             this.getEmployees();
+
         })
     }
 

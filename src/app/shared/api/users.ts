@@ -32,12 +32,7 @@ interface Admin {
     email?: string;
     phone?: string;
     department?: string;
-    address?: {
-        street: string;
-        city: string;
-        state: string;
-        zip: string;
-    };
+    address?: string;
 
     role?: string;
 }

@@ -1,12 +1,11 @@
-<form autocomplete="off" [formGroup]="userForm" (ngSubmit)="saveUser()">
-    <p-dialog
-        header="Create new user"
-        [(visible)]="employeeService.displayDialog"
-        [modal]="true"
-        [style]="{ width: '650px' }"
-        (onHide)="userForm.reset()"
-        close
-    >
+
+<p-dialog
+    header="Create new user"
+    [(visible)]="employeeService.displayDialog"
+    [modal]="true"
+    [style]="{ width: '650px' }"
+    close
+>
         <div class="field">
             <label for="Name">Name</label>
             <input
@@ -14,11 +13,19 @@
                 type="text"
                 class="w-full"
                 pInputText
-                formControlName="Name"
+                [(ngModel)]="this.employee.name" required autofocus
             />
-            <small *ngIf="isInvalid('Name')" id="name-help" class="p-error">
-                <div *ngIf="name?.errors?.['required']">Name is required.</div>
-            </small>
+
+        </div>
+        <div class="field">
+            <label for="username">Username</label>
+            <input
+                id="username"
+                type="text"
+                class="w-full"
+                pInputText
+                [(ngModel)]="this.employee.username" required autofocus
+            />
         </div>
 
         <div class="field">
@@ -28,33 +35,41 @@
                 type="email"
                 class="w-full"
                 pInputText
-                formControlName="email"
+                [(ngModel)]="this.employee.email" required autofocus
             />
-            <small *ngIf="isInvalid('email')" id="email-help" class="p-error">
-                <div *ngIf="email?.errors?.['required']">Email is required.</div>
-                <div *ngIf="email?.errors?.['email']">Email must be valid.</div>
-            </small>
+
         </div>
+            <div class="field">
+                <label for="age">age</label>
+                <input
+                    id="age"
+                    type="number"
+                    class="w-full"
+                    pInputText
+                    [(ngModel)]="this.employee.age" required autofocus
+                />
 
-        <div class="field">
-            <label for="email">Username</label>
-            <input
-                id="username"
-                type="text"
-                class="w-full"
-                pInputText
-                formControlName="username"
-            />
-            <small *ngIf="isInvalid('username')" id="username-help" class="p-error">
-                <div *ngIf="username?.errors?.['required']">Username is required.</div>
-                <div *ngIf="username?.errors?.['minlength']">
-                    Username must be at least 3 characters long.
-                </div>
-            </small>
-        </div>
-
-
-        <ng-template pTemplate="footer">
+            </div>
+            <div class="field">
+                <label for="address">address</label>
+                <input
+                    id="address"
+                    type="text"
+                    class="w-full"
+                    pInputText
+                    [(ngModel)]="this.employee.address" required autofocus
+                />
+            </div>
+            <div class="field">
+                <label for="departement">adepartemnt</label>
+                <input
+                    id="departement"
+                    type="text"
+                    class="w-full"
+                    pInputText
+                    [(ngModel)]="this.employee.departement" required autofocus
+                />
+            </div>
             <button
                 pButton
                 pRipple
@@ -62,17 +77,6 @@
                 class="p-button"
                 icon="pi pi-check"
                 type="submit"
-                [disabled]="submitting"
-            ></button>
-            <button
-                pButton
-                pRipple
-                label="Cancel"
-                class="p-button-secondary p-button-text"
-                icon="pi pi-times"
-                type="button"
-                (click)="closeDialog()"
-            ></button>
-        </ng-template>
-    </p-dialog>
-</form>
+                (click)="saveUser()"
+            > </button>
+</p-dialog>

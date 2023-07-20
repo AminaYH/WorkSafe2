@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { LayoutService } from 'src/app/employee/layout/service/app.layout.service';
+import {Employee} from "../../../api/users";
+import {UsersService} from "../../../service/users.service";
+import {Router} from "@angular/router";
+import {FormBuilder} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
 
 @Component({
     selector: 'app-login',
@@ -19,5 +24,30 @@ export class RegisterComponent {
 
     password!: string;
 
-    constructor(public layoutService: LayoutService) { }
+    employee:Employee={};
+
+
+    constructor(public layoutService: LayoutService,
+        public employeeService: UsersService,
+        private  router:Router,
+        private formBuilder: FormBuilder,
+        private http :HttpClient
+
+    ) {}
+    saveUser() {
+        this.employeeService.displayDialog = false;
+
+        // console.log(this.employee);
+        this.employeeService.createEmployee(this.employee).subscribe(
+            ( data :any )=>
+            {
+                console.log('employee',data);
+                this.router.navigate(['/dashboard'])
+
+            },
+
+
+        )
+
+    }
 }

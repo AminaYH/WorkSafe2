@@ -2,8 +2,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Employee } from '../api/users';
 import {catchError, Observable, throwError} from "rxjs";
-import {environment} from "../../../environments/environment";
-import * as Http from "http";
+
 
 @Injectable(
     {
@@ -14,16 +13,16 @@ export class UsersService {
     displayDialog: boolean = false;
 
     public employees: Employee[]=[];
-    private baseURL = "http://localhost:8084/api/v1/employees";
+    private baseURL = "http://localhost:8084/api/v1";
 
     constructor(private httpClient: HttpClient) { }
 
     getAllEmployees(): Observable<Employee[]>{
-        return this.httpClient.get<Employee[]>(`${this.baseURL}`);
+        return this.httpClient.get<Employee[]>(`${this.baseURL}/employees`);
     }
 
-    createEmployee(employee: Employee): Observable<Object>{
-        return this.httpClient.post<Employee>(`${this.baseURL}`, employee);
+    createEmployee(fromClient: Employee): Observable<Employee>{
+        return this.httpClient.post<Employee>(`${this.baseURL}/add`, fromClient);
     }
 
     getEmployeeById(id: number): Observable<Employee>{
@@ -31,7 +30,7 @@ export class UsersService {
     }
 
     updateEmployee(id: number, employee: Employee): Observable<Object>{
-        return this.httpClient.put(`${this.baseURL}/${id}`, employee);
+        return this.httpClient.put(`${this.baseURL}/delete/${id}`, employee);
     }
 
     deleteEmployee(id: number): Observable<Object>{

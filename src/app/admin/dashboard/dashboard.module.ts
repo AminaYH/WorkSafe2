@@ -10,6 +10,6 @@ import { PrimeNgUIComponentModule } from 'src/app/shared/modules/primeng-ui-comp
         DashboardsRoutingModule,
         PrimeNgUIComponentModule
     ],
-    declarations: [DashboardComponent]
+    declarations: []
 })
 export class DashboardModule { }
